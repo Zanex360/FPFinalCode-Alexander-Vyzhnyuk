@@ -5,6 +5,7 @@ public class Player extends Sprite {
     private double ddy;
     private boolean grounded;
     private int coins;
+    private double lifetime;
 
     public Player(double x, double y, double w, double h) {
         super(x, y, w, h);
@@ -19,6 +20,8 @@ public class Player extends Sprite {
     }
 
     public void update(double dt) {
+        lifetime += dt;
+
         if (Input.getWDown() && grounded) {
             dy = -90;
             grounded = false;
@@ -83,5 +86,7 @@ public class Player extends Sprite {
     public int getCoins() {
         return coins;
     }
+    public double getLifetime() {
+        return lifetime;
+    }
 }
-

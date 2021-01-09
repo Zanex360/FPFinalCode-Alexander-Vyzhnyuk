@@ -12,6 +12,6 @@ public class CoinCounter extends UI{
     }
     public void render(Graphics2D g) {
         g.setColor(Color.BLACK);
-        g.drawString(player.getCoins().toString(), 50, 50);
+        g.drawString(Integer.toString(player.getCoins()), 50, 50);
     }
 }

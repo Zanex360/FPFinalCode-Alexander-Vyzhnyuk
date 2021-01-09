@@ -35,9 +35,10 @@ public class Game {
         a.setVisible(true);
         a.createBufferStrategy(2);
         BufferStrategy strat = a.getBufferStrategy();
-
-        UI counter = new CoinCounter(100, 100, 30, 30);
-        level.add(new Player(120, 450, 30, 30));
+        Player player = new Player(120, 450, 30, 30);
+        UI counter = new CoinCounter(100, 100, 30, 30, player);
+        UI lifetime = new Timer(460, 50, 30, 30, player);
+        level.add(player);
         level.add(new Block(100, 500, 30, 30));
         level.add(new Block(130, 500, 30, 30));
         level.add(new Block(160, 500, 30, 30));
@@ -134,6 +135,7 @@ public class Game {
 
             g.translate((int) -cameraX, (int) -cameraY);
             counter.render((Graphics2D) g);
+            lifetime.render((Graphics2D) g);
             //render the rest of the ui elements
             g.dispose();
             strat.show();
