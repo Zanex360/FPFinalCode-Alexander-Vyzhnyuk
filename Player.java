@@ -47,7 +47,7 @@ public class Player extends Sprite {
     }
 
     public void collision(Sprite other) {
-        if (other instanceof Block) {
+        if (other instanceof Block || other instanceof InvisibleBlock) {
             if (y + h > other.y && y < other.y) {
                 grounded = true;
                 y = other.y - h;
@@ -66,11 +66,11 @@ public class Player extends Sprite {
             //}
 
             //from left
-            if (x < other.x + other.w && y + h / 2 < other.y + other.h && y + h / 2 > other.y) {
+            if (x < other.x + other.w && y + h / 2 < other.y + other.h && y + h / 2 > other.y && x > other.x + other.w / 2) {
                 x = other.x + other.w;
             }
             //from right
-            if (x + w > other.x && y + h / 2 < other.y + other.h && y + h / 2 > other.y) {
+            if (x + w > other.x && y + h / 2 < other.y + other.h && y + h / 2 > other.y && x + w < other.x + other.w / 2) {
                 x = other.x - w;
             }
             //from top

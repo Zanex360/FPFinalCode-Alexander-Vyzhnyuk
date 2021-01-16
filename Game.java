@@ -17,6 +17,8 @@ public class Game {
     public static BufferedImage mysterySprite;
     public static BufferedImage polebottomSprite;
     public static BufferedImage poleSprite;
+    public static BufferedImage lefttubeSprite;
+    public static BufferedImage righttubeSprite;
 
     private static ArrayList<Sprite> level = new ArrayList<Sprite>();
     private static ArrayList<UI> ui = new ArrayList<UI>();
@@ -29,6 +31,8 @@ public class Game {
             mysterySprite = ImageIO.read(new File("Sprites/Mystery.png"));
             polebottomSprite = ImageIO.read(new File("Sprites/PoleBottom.png"));
             poleSprite = ImageIO.read(new File("Sprites/Pole.png"));
+            lefttubeSprite = ImageIO.read(new File("Sprites/LeftTube.png"));
+            righttubeSprite = ImageIO.read(new File("Sprites/RightTube.png"));
         }
         catch (IOException e) {
             System.out.println(e);
@@ -298,18 +302,41 @@ public class Game {
         level.add(new Block(700, 530, 30, 30));
         level.add(new Block(730, 530, 30, 30));
         level.add(new Block(760, 530, 30, 30));
+        level.add(new Block(-410, 500, 30, 30));
+        level.add(new Block(-440, 500, 30, 30));
+        level.add(new Block(-410, 530, 30, 30));
+        level.add(new Block(-440, 530, 30, 30));
+        level.add(new Block(-410, 560, 30, 30));
+        level.add(new Block(-440, 560, 30, 30));
+        level.add(new Block(-410, 590, 30, 30));
+        level.add(new Block(-440, 590, 30, 30));
+        level.add(new Block(-410, 620, 30, 30));
+        level.add(new Block(-440, 620, 30, 30));
+        level.add(new Block(-410, 650, 30, 30));
+        level.add(new Block(-440, 650, 30, 30));
+        level.add(new Block(-410, 680, 30, 30));
+        level.add(new Block(-440, 680, 30, 30));
+        level.add(new Block(-410, 710, 30, 30));
+        level.add(new Block(-440, 710, 30, 30));
+        level.add(new Block(-410, 740, 30, 30));
+        level.add(new Block(-440, 740, 30, 30));
+        level.add(new Block(-410, 770, 30, 30));
+        level.add(new Block(-440, 770, 30, 30));
 
         level.add(new PoleBottom(300, 300, 30, 30));
         level.add(new Pole(300, 270, 30, 30));
+        
+        //invisible wall
+        level.add(new InvisibleBlock(40, 100, 30, 400));
 
         //coin thing
-        level.add(new Block(310, 410, 30, 30));
-        level.add(new Mystery(340, 410));
-        level.add(new Block(370, 410, 30, 30));
+        level.add(new Block(310, 430, 30, 30));
+        level.add(new Mystery(340, 430));
+        level.add(new Block(370, 430, 30, 30));
 
-        level.add(new Mystery(550, 410));
-        level.add(new Mystery(580, 410));
-        level.add(new Mystery(520, 450));
+        level.add(new Mystery(550, 430));
+        level.add(new Mystery(580, 430));
+        level.add(new Mystery(520, 430));
 
         level.add(new Block(340, 500, 30, 30));
         level.add(new Block(370, 500, 30, 30));
@@ -329,6 +356,10 @@ public class Game {
         level.add(new Block(760, 500, 30, 30));
         level.add(new Block(760, 470, 30, 30));
         level.add(new Block(760, 440, 30, 30));
+        level.add(new LeftTube(790, 500, 30, 30));
+        level.add(new RightTube(820, 500, 30, 30));
+        level.add(new Block(790, 530, 30, 30));
+        level.add(new Block(820, 530, 30, 30));
         level.add(new Block(850, 500, 30, 30));
         level.add(new Block(880, 500, 30, 30));
         level.add(new Block(910, 500, 30, 30));

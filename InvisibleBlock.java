@@ -7,6 +7,6 @@ public class InvisibleBlock extends Sprite{
     }
 
     public void render(Graphics2D g) {
-        
+
     }
 }
